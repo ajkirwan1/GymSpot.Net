@@ -4,63 +4,16 @@
 
 <h1>Home</h1>
 <p>Welcome to the home page</p>
-@{
-    UserGridModel userGridModel = new UserGridModel()
-    {
-        GridTitle = "NEW TITLE",
-        Persons = new List<UserModel>()
-        {
-            new UserModel()
-            {
-                Name = "Dog",
-                DateofBirth = DateTime.Now,
-                AccountPassword = "Dog",
-                Address = "Dog",
-                EmailAddress = "Dog",
-                Gender = Gender.Male
-            },
-            new UserModel()
-            {
-                Name = "Cat",
-                DateofBirth = DateTime.Now,
-                AccountPassword = "Cat",
-                Address = "Cat",
-                EmailAddress = "Cat",
-                Gender = Gender.Male
-            },
-        }
-    };
-    UserGridModel personGridModel = new UserGridModel()
-            {
-            GridTitle = "Persons List",
-            Persons = new List<UserModel>
-                {
-            new UserModel() 
-            {
-                Name = "Adam Kirwan",
-                DateofBirth = DateTime.Now,
-                AccountPassword = "Password123",
-                Address = "Some Address",
-                EmailAddress = "Adam@123",
-                Gender = Gender.Male
-            },
-            new UserModel() 
-            {
-                Name = "Jimmy Jones",
-                DateofBirth = DateTime.Now,
-                AccountPassword = "Password123",
-                Address = "Some Address",
-                EmailAddress = "Adam@123",
-                Gender = Gender.Female
-            }
-        }
-    };
-}
 
-@await Component.InvokeAsync("Grids", new {
-        gridModel = userGridModel
-});
-@await Component.InvokeAsync("Grids", new
-    {
-        gridModel = personGridModel
-    });
+<div class="box flex">
+    <div class="flex-1">Start training!</div>
+</div>
+<div class="box flex">
+    <div class="flex-1">Training history</div>
+</div>
+<div class="box flex">
+    <div class="flex-1">Find a personal trainer</div>
+</div>
+<div class="box flex">
+    <div class="flex-1">Add a new routine</div>
+</div>

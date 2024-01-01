@@ -24,13 +24,15 @@ app.MapControllers();
 
 app.UseEndpoints(endpoints =>
 {
+    //endpoints.MapControllerRoute(
+    //name: "deault",
+    //pattern: "{area:exists}/{controller=Home}/{action=Index}");
+    //endpoints.MapControllerRoute(
+    //name: "default",
+    //pattern: "{controller=Login}/{action=Index}/{id?}"
     endpoints.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}");
-    endpoints.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}"
-    );
+    name: "deault",
+    pattern: "{area=Client}/{controller=Home}/{action=Index}");
 });
 
 
