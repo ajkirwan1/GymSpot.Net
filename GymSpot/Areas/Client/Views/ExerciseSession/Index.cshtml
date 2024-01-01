@@ -1,0 +1,35 @@
+﻿@model List<ExerciseSession>
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+
+<h1>Exercise List List</h1>
+<div class="box flex">
+    <div class="flex-1">
+        <a asp-area="Client" asp-action="CreateExerciseSession" asp-controller="ExerciseSession">
+            <div class="flex-1">
+                <button class="button button-green-back">Add New Session</button>
+            </div>
+        </a>
+    </div>
+    <table class="table w-100">
+        <thead>
+            <tr>
+                <th>Session Name</th>
+                <th>Exercise List Id</th>
+                <th>Session Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ExerciseSession entry in Model)
+            {
+                <tr>
+                    <td>@entry.Name</td>
+                    <td>@entry.ExerciselistId</td>
+                    <td>@entry.ExerciseSessionId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

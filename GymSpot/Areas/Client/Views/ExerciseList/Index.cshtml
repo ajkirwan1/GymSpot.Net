@@ -1,0 +1,40 @@
+﻿@model List<ExerciseList>
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+<h1>Exercise List List</h1>
+<div class="box flex">
+    <div class="flex-1">
+        <a asp-area="Client" asp-action="CreateExerciseList" asp-controller="ExerciseList">
+            <div class="flex-1">
+                <button class="button button-green-back">Add New Exercise List</button>
+            </div>
+        </a>
+    </div>
+    <table class="table w-100">
+        <thead>
+            <tr>
+                <th>Exercise List Name</th>
+                <th>Exercise List ID</th>
+                <th>ListOfExercises</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ExerciseList entry in Model)
+            {
+                <tr>
+                    <td>@entry.Name</td>
+                    <td>@entry.ExerciselistId</td>
+                    <td>
+                    @foreach(ExerciseItem exercise in entry.ListOfExercises)
+                    {
+                            <span>@exercise.Name.ToString()</span>
+                            
+                    }
+                    </td>
+                 </tr>
+            }
+        </tbody>
+    </table>
+</div>

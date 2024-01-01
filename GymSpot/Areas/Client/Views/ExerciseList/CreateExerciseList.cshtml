@@ -1,0 +1,43 @@
+﻿@model ExerciseList
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+
+<a href="~/Client/ExerciseList/Index" class="link-hover">Back to Exercise List</a>
+<h2>Create Exercise List</h2>
+<div class="w-50">
+    <form method="post">
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="Name" class="form-label pt">Exercise Name</label>
+            </div>
+            <div class="flex-1">
+                <input type="Name" id="Name" name="Name" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="ExerciselistId" class="form-label pt">ExerciselistId</label>
+            </div>
+            <div class="flex-1">
+                <input type="text" id="ExerciselistId" name="ExerciselistId" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="ListOfExercises" class="form-label pt">ListOfExercises</label>
+            </div>
+            <div class="flex-1">
+                <input type="text" id="ListOfExercises" name="ListOfExercises" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button class="button button-green-back">Create</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "GYMSPOT PT";
+}
+@{
+    UserGridModel userGridModel = new UserGridModel()
+            {
+                GridTitle = "NEW TITLE2",
+                Persons = new List<UserModel>()
+        {
+            new UserModel()
+            {
+                Name = "Dasdassssssdog",
+                DateofBirth = DateTime.Now,
+                AccountPassword = "Dog",
+                Address = "Dog",
+                EmailAddress = "Dog",
+                Gender = Gender.Male
+            },
+            new UserModel()
+            {
+                Name = "Casddddddddddddat",
+                DateofBirth = DateTime.Now,
+                AccountPassword = "Cat",
+                Address = "Cat",
+                EmailAddress = "Cat",
+                Gender = Gender.Male
+            },
+        }
+    };
+}
+
+<div class="box">
+<div class="list-container">
+    <h1>Personal Details</h1>
+    <ul class="list">
+        <li>@Model.Name</li>
+        <li>@Model.DateofBirth</li>
+        <li>@Model.Gender</li>
+        <li>@Model.EmailAddress</li>
+        <li>@Model.AccountPassword</li>
+        <li>@Model.Address</li>
+    </ul>
+</div>
+</div>
+
+<vc:grid gridModel="userGridModel"></vc:grid>
+@await Component.InvokeAsync("Grid", new
+    {
+        gridModel = userGridModel
+    })

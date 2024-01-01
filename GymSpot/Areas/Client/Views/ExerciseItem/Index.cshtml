@@ -1,0 +1,32 @@
+﻿@model List<ExerciseItem>
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+<h1>Exercise Item List</h1>
+<div class="box flex">
+<div class="flex-1">
+      <a asp-area="Client" asp-action="CreateExercise" asp-controller="ExerciseItem">
+            <div class="flex-1">
+                <button class="button button-green-back">Add New Exercise</button>
+            </div>
+      </a>
+</div>
+<table class="table w-100">
+    <thead>
+        <tr>
+            <th>Exercise Name</th>
+            <th>Exercise ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ExerciseItem entry in Model)
+        {
+            <tr>
+                <td>@entry.Name</td>
+                <td>@entry.ExerciseItemId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

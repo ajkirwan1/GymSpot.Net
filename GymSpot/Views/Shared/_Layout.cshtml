@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="/StyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" 
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-brand">@ViewData["Title"]</div>
+            <ul>
+                <li>
+                    <a href="~/client-home">Home page</a>
+                </li>
+                <li>
+                    <a href="~/pt-home">Home page</a>
+                </li>
+                <li>
+                    <a href="~/client-personal-details">Personal Details</a>
+                </li>
+                <li>
+                    <a href="~/pt-personal-details">Personal Details</a>
+                </li>
+                <li>
+                    <a href="~/personal-details">Find Personal Trainers</a>
+                </li>
+                <li>
+                    <a href="~/clients">My Clients</a>
+                </li>
+                <li>
+                    <a href="~/diary">My Diary</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-content">
+        @RenderBody()
+    </div>
+    <div class="footer-content">
+        FOOTER HERE
+    </div>
+</body>
+</html>

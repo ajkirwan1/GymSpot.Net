@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="/StyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" 
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-brand">@ViewData["Title"]</div>
+            <ul>
+                <li>
+                    <a asp-controller="Home" asp-action="Index" asp-area="PT">Home page</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="AccountDetails" asp-area="PT">Personal Details</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="GetClients" asp-area="PT">My Clients</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Diary" asp-area="PT">My Diary</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Index" asp-area="PT">Messages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-content">
+        @RenderBody()
+    </div>
+    <div class="footer-content">
+        FOOTER HERE
+    </div>
+</body>
+</html>

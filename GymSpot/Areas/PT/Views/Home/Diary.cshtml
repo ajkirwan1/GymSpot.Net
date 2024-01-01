@@ -1,0 +1,58 @@
+﻿@model List<DiaryModel>
+
+@{
+    ViewData["Title"] = "GYMSPOT PT";
+}
+<form action="~/diary" method="get">
+<div>
+    <h1>Here will be your diary</h1>
+
+    <div class="box flex">
+        <div class="flex-1">
+            <select class="form-input" name="searchBy">
+                @foreach(var field in ViewBag.SearchFields)
+                {
+                    if (@field.Key == ViewBag.SearchBy)
+                    {
+                    <option value="@field.Key" selected="selected">@field.Value</option>
+                    }
+                    else
+                    {
+                    <option value="@field.Key">@field.Value</option>
+                    }
+                }
+            </select>
+                @* searchBy = @field.Key&searchString=abc *@
+        </div>
+        <div class="flex-1">
+                <input type="search" id="search" class="form-input" placeholder="Search" name="searchString" value="@ViewBag.SearchString" />
+        </div>
+        <div class="flex-1">
+            <button class="button button-blue-back">Search</button>
+            <a href="~/diary" class="link-hover">Clear ALL</a>
+        </div>
+    </div>
+    <table class="table w-100">
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Appointment Date</th>
+                <th>Details</th>
+                <th>Send Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DiaryModel entry in Model)
+            {
+                <tr>
+                    <td>@entry.Client</td>
+                    <td>@entry.Date</td>
+                    <td>@entry.Details</td>
+                    <td>MESSAGE BUTTON HERE</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+</form>

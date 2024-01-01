@@ -1,0 +1,40 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "GYMSPOT PT";
+}
+
+<h1>Clients</h1>
+<p>List of clients for a personal trainer</p>
+
+<div class="box">
+    <h3>Your Clients</h3>
+    <table class="table w-100">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Account Password</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.Name</td>
+                    <td>@Model.EmailAddress</td>
+                    <td>@Model.AccountPassword</td>
+                    <td>@Model.Gender</td>
+                    <td>@Model.DateofBirth</td>
+                    <td>@Model.Address</td>
+                </tr>
+    </table>
+</div>
+
+<div id="list">
+
+</div>
+
+<button class="button button-blue-black" id="load-friends-button"> LOAD CLIENTS</button>
+<script src="~/Clients.js"></script>
