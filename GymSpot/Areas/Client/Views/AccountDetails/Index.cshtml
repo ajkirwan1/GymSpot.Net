@@ -1,0 +1,19 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+<h1>Exercise Item List</h1>
+<div class="box">
+    <div class="list-container">
+        <h1>Personal Details</h1>
+        <ul class="list">
+            <li>@Model.Name</li>
+            <li>@Model.DateofBirth</li>
+            <li>@Model.Gender</li>
+            <li>@Model.EmailAddress</li>
+            <li>@Model.AccountPassword</li>
+            <li>@Model.Address</li>
+        </ul>
+    </div>
+</div>
