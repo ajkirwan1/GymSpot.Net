@@ -351,6 +351,9 @@ a.link-hover:hover {
 }
 
 
+.div-hover:hover {
+    background-color: cadetblue;
+}
 
 
 @media screen and (min-width: 1000px) {
