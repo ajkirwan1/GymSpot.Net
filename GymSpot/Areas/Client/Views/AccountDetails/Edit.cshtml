@@ -1,0 +1,60 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "GYMSPOT CLIENT";
+}
+
+<a href="~" class="link-hover">Back to Home Page</a>
+<h2>Create Exercise</h2>
+<div class="w-50">
+    <form  method="post">
+        <input asp-for="UserId" hidden/>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Name" class="form-label pt">Exercise Name</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Name" type="text" id="Name" name="Name" class="form-input" />
+            </div>
+         </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="DateofBirth" class="form-label pt">Date of Birth</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="DateofBirth" type="date" id="DateofBirth" name="DateofBirth" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="EmailAddress" class="form-label pt">EmailAddress</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="EmailAddress" type="text" id="EmailAddress" name="EmailAddress" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="AccountPassword" class="form-label pt">AccountPassword</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="AccountPassword" type="text" id="AccountPassword" name="AccountPassword" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Address" class="form-label pt">Address</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Address" type="text" id="Address" name="Address" class="form-input" />
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button type="submit" class="button button-green-back">Create</button>
+            </div>
+        </div>
+    </form>
+</div>
