@@ -21,7 +21,7 @@ pipeline {
         stage('Restore packages') {
             steps {
                 withDotNet (sdk : '.NET 8') {
-                sh "dotnet restore ${workspace}\\GymSpot.sln"
+                sh "dotnet restore ${workspace}/GymSpot.sln"
                     
                 }
             }
