@@ -1,24 +1,23 @@
-// pipeline {
-//     agent any
-//     options {
-//         // Timeout counter starts AFTER agent is allocated
-//         timeout(time: 100, unit: 'SECONDS')
-//     }
-//     stages {
-//         stage('Example') {
-//             steps {
-//                 echo 'Hello World'
-//             }
-//         }
-//     }
-// }
 pipeline {
-    agent { dockerfile true }
+    agent any
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 100, unit: 'SECONDS')
+    }
     stages {
-        stage('Test') {
+        stage('Example') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                echo 'Hello World'
+            }
+        }
+        stage ('Git Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/ajkirwan1/GymSpot.Net'
+                }
+        }
+        stage('Restore packages') {
+            steps {
+                bat "dotnet restore ${workspace}\\<path-to-solution>\\<solution-project-name>.sln"
             }
         }
     }
