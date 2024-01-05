@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Restore packages') {
             steps {
-                bat "dotnet restore ${workspace}\\GymSpot.sln"
+                sh "dotnet restore ${workspace}\\GymSpot.sln"
             }
         }
     }
