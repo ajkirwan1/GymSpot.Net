@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = 1
+    }
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 100, unit: 'SECONDS')
@@ -18,7 +21,7 @@ pipeline {
         stage('Restore packages') {
             steps {
                 withDotNet (sdk : '.NET 8') {
-                sh "dotnetRestore ${workspace}\\GymSpot.sln"
+                sh "dotnet restore ${workspace}\\GymSpot.sln"
                     
                 }
             }
